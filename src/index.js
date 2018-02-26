@@ -35,12 +35,12 @@ const initialState = {
   ]
 }
 
-const userReducer = function(state = initialState) {
-  return state.profile
+const userReducer = function(state = initialState.profile) {
+  return state
 }
 
-const plansReducer = function(state = initialState) {
-  return state.plans
+const plansReducer = function(state = initialState.plans) {
+  return state
 }
 
 const rootReducer = redux.combineReducers({
