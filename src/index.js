@@ -1,4 +1,4 @@
-const redux = require("redux");
+const redux = require("redux")
 
 const initialState = {
   profile: {
@@ -33,12 +33,23 @@ const initialState = {
       cost: 2500
     }
   ]
-};
+}
 
 const userReducer = function(state = initialState) {
-  return state;
-};
+  return state.profile
+}
 
-const store = redux.createStore(userReducer);
+const plansReducer = function(state = initialState) {
+  return state.plans
+}
 
-console.log(store.getState());
+const rootReducer = redux.combineReducers({
+  users: userReducer,
+  plans: plansReducer
+})
+
+const store = redux.createStore(rootReducer)
+
+const jsonRes = JSON.stringify(store.getState())
+
+console.log(jsonRes)
