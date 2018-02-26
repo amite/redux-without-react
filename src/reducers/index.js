@@ -38,9 +38,13 @@ const initialState = {
 const userReducer = function(state = initialState.profile, action) {
   switch (action.type) {
     case "UPDATE_FIRST_NAME":
+      state.name.first = action.payload.first
       return {
-        ...state.name,
-        first: action.payload.first
+        ...state,
+        name: {
+          ...state.name,
+          first: action.payload.first
+        }
       }
     default:
       return state
