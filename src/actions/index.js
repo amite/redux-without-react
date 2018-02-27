@@ -1,12 +1,14 @@
 const updateName = () => {
   return {
-    type: "UPDATE_FIRST_NAME",
+    type: "UPDATE_NAME",
     payload: {
-      first: "dana"
+      title: "Ms",
+      first: "dana",
+      last: "eggling"
     }
-  }
-}
+  };
+};
 
 module.exports = {
   updateName
-}
+};

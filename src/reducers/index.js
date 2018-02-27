@@ -1,4 +1,4 @@
-const redux = require("redux")
+const redux = require("redux");
 
 const initialState = {
   profile: {
@@ -33,31 +33,32 @@ const initialState = {
       cost: 2500
     }
   ]
-}
+};
 
 const userReducer = function(state = initialState.profile, action) {
   switch (action.type) {
-    case "UPDATE_FIRST_NAME":
-      state.name.first = action.payload.first
+    case "UPDATE_NAME":
       return {
         ...state,
         name: {
           ...state.name,
-          first: action.payload.first
+          title: action.payload.title,
+          first: action.payload.first,
+          last: action.payload.last
         }
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
 const plansReducer = function(state = initialState.plans) {
-  return state
-}
+  return state;
+};
 
 const rootReducer = redux.combineReducers({
   users: userReducer,
   plans: plansReducer
-})
+});
 
-module.exports = rootReducer
+module.exports = rootReducer;
