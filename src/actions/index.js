@@ -1,10 +1,10 @@
-const updateName = () => {
+const updateName = ({ title, first, last }) => {
   return {
     type: "UPDATE_NAME",
     payload: {
-      title: "Ms",
-      first: "dana",
-      last: "eggling"
+      title,
+      first,
+      last
     }
   };
 };

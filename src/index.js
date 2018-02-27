@@ -1,11 +1,17 @@
-const redux = require("redux")
-const rootReducer = require("./reducers")
-const { updateName } = require("./actions")
+const redux = require("redux");
+const rootReducer = require("./reducers");
+const { updateName } = require("./actions");
 
-const store = redux.createStore(rootReducer)
+const store = redux.createStore(rootReducer);
 
-store.dispatch(updateName())
+store.dispatch(
+  updateName({
+    title: "Ms",
+    first: "dana",
+    last: "eggling"
+  })
+);
 
-const jsonRes = JSON.stringify(store.getState())
+const jsonRes = JSON.stringify(store.getState());
 
-console.log(jsonRes)
+console.log(jsonRes);
